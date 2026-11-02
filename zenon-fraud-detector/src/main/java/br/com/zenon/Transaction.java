@@ -1,3 +1,4 @@
+
 package br.com.zenon;
 
 import java.math.BigDecimal;
@@ -5,7 +6,7 @@ import java.math.BigDecimal;
 public class Transaction {
 
     private final int step;
-    private final transactionType type;
+    private final TransactionType type;
     private final BigDecimal amount;
 
     private final TransactionCustomer origin;
@@ -14,7 +15,15 @@ public class Transaction {
     private final boolean isFraud;
     private final boolean isFlaggedFraud;
 
-    public Transaction(int step, transactionType type, BigDecimal amount, TransactionCustomer.TransactionCustomer origin, TransactionCustomer.TransactionCustomer recipient, boolean isFraud, boolean isFlaggedFraud) {
+    public Transaction(
+            int step,
+            TransactionType type,
+            BigDecimal amount,
+            TransactionCustomer origin,
+            TransactionCustomer recipient,
+            boolean isFraud,
+            boolean isFlaggedFraud
+    ) {
         this.step = step;
         this.type = type;
         this.amount = amount;
@@ -28,7 +37,7 @@ public class Transaction {
         return step;
     }
 
-    public transactionType getType() {
+    public TransactionType getType() {
         return type;
     }
 
